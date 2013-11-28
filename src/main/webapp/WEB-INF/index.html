@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Marionette Firebase Chat</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form id="userForm" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <label class="sr-only">Username</label>
+                    <input type="text" class="form-control" placeholder="Username">
+                </div>
+                <button type="submit" class="btn btn-default">Set</button>
+            </form>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="messageList" class="list-group"></ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <form id="addMessage">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Message">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary btn-block">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- templates -->
+<script id="userTemplate" type="text/x-handlebars-template">
+    <div class="form-group">
+        <label class="sr-only">Username</label>
+        <input type="text" value="{{name}}" class="form-control" placeholder="Username">
+    </div>
+    <button type="submit" class="btn btn-default">Set</button>
+</script>
+
+<script id="messageTemplate" type="text/x-handlebars-template">
+    <div class="row">
+        <div class="col-sm-4">
+            <strong>{{#if username}}{{username}}{{else}}Unknown{{/if}}</strong> @ <small><em>{{formatDate createDate "D/M/YY H:mm:ss"}}</em></small>
+        </div>
+        <div class="col-sm-8">{{#if text}}{{text}}{{else}}Nothing{{/if}}</div>
+    </div>
+</script>
+
+<!-- libs -->
+<script type="text/javascript" src="js/libs/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="js/libs/bootstrap.js"></script>
+<script type="text/javascript" src="js/libs/underscore.js"></script>
+<script type="text/javascript" src="js/libs/handlebars-v1.1.2.js"></script>
+<script type="text/javascript" src="js/libs/moment-with-langs.js"></script>
+<script type='text/javascript' src='//cdn.firebase.com/v0/firebase.js'></script>
+<script type="text/javascript" src="js/libs/backbone.js"></script>
+<script type="text/javascript" src="js/libs/backbone-firebase.js"></script>
+<script type="text/javascript" src="js/libs/backbone.marionette.js"></script>
+
+<!-- helpers -->
+<script type="text/javascript" src="js/handlebars-helpers/moment-helper.js"></script>
+
+<!-- chat -->
+<script type="text/javascript" src="js/chat.js"></script>
+<script type="text/javascript" src="js/user/user.js"></script>
+<script type="text/javascript" src="js/user/view.js"></script>
+<script type="text/javascript" src="js/user/controller.js"></script>
+<script type="text/javascript" src="js/message/message.js"></script>
+<script type="text/javascript" src="js/message/messageView.js"></script>
+<script type="text/javascript" src="js/message/addMessageView.js"></script>
+<script type="text/javascript" src="js/message/messageCollection.js"></script>
+<script type="text/javascript" src="js/message/messageCollectionView.js"></script>
+<script type="text/javascript" src="js/message/controller.js"></script>
+
+</body>
+</html>
