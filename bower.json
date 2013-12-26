@@ -1,0 +1,17 @@
+{
+	"name": "marionette-firebase-chat",
+	"private": true,
+	"dependencies": {
+		"sass-bootstrap": "~3.0.2",
+		"modernizr": "~2.6.2",
+		"jquery": "~2.0.3",
+		"underscore": "~1.5.2",
+		"handlebars": "~1.2.0",
+		"backbone": "~1.1.0",
+		"backbone.marionette": "~1.4.1",
+		"moment": "~2.5.0",
+		"firebase": "~1.0.1",
+		"backfire": "~0.3.0"
+	},
+	"devDependencies": {}
+}

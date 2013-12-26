@@ -1,0 +1,135 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Marionette Firebase Chat Client</title>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+	<script src="bower_components/modernizr/modernizr.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="container">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="">Marionette Firebase Chat</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<form id="userForm" class="navbar-form navbar-right"></form>
+		</div>
+	</nav>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="well">
+				<div class="row">
+					<div id="messageListWrapper" class="col-md-12">
+						<ul id="messageList" class="list-group"></ul>
+					</div>
+				</div>
+				<div class="row">
+					<form id="addMessage">
+						<div class="col-md-10">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Message">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<button type="submit" class="btn btn-primary btn-block">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- templates -->
+<script id="userTemplate" type="text/x-handlebars-template">
+	<div class="form-group">
+		<label class="sr-only">Username</label>
+		<input type="text" value="{{name}}" class="form-control" placeholder="Username">
+	</div>
+	<button type="submit" class="btn btn-default">Set</button>
+</script>
+
+<script id="messageTemplate" type="text/x-handlebars-template">
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{#if username}}{{username}}{{else}}Unknown{{/if}}</strong> @
+			<small><em>{{formatDate createDate "D/M/YY H:mm:ss"}}</em></small>
+		</div>
+		<div class="col-sm-8">{{#if text}}{{text}}{{else}}Nothing{{/if}}</div>
+	</div>
+</script>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/firebase/lib/firebase.js"></script>
+<script src="bower_components/backfire/backbone-firebase.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script type="text/javascript" src="scripts/handlebars-helpers/moment-helper.js"></script>
+<script type="text/javascript" src="scripts/chat.js"></script>
+<script type="text/javascript" src="scripts/user/user.js"></script>
+<script type="text/javascript" src="scripts/user/view.js"></script>
+<script type="text/javascript" src="scripts/user/controller.js"></script>
+<script type="text/javascript" src="scripts/message/message.js"></script>
+<script type="text/javascript" src="scripts/message/messageView.js"></script>
+<script type="text/javascript" src="scripts/message/addMessageView.js"></script>
+<script type="text/javascript" src="scripts/message/messageCollection.js"></script>
+<script type="text/javascript" src="scripts/message/messageCollectionView.js"></script>
+<script type="text/javascript" src="scripts/message/controller.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<script src="bower_components/sass-bootstrap/js/affix.js"></script>
+<script src="bower_components/sass-bootstrap/js/alert.js"></script>
+<script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+<script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+<script src="bower_components/sass-bootstrap/js/modal.js"></script>
+<script src="bower_components/sass-bootstrap/js/transition.js"></script>
+<script src="bower_components/sass-bootstrap/js/button.js"></script>
+<script src="bower_components/sass-bootstrap/js/popover.js"></script>
+<script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+<script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+<script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+<script src="bower_components/sass-bootstrap/js/tab.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
