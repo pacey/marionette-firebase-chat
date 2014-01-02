@@ -1,5 +1,6 @@
 "use strict";
-Chat.module("User", function (User, Chat, Backbone, Marionette, $, _) {
+
+Chat.module("User", function (User, Chat, Backbone, Marionette) {
 	User.Controller = Marionette.Controller.extend({
 		initialize: function () {
 			if (localStorage.getItem("user")) {

@@ -21,6 +21,7 @@
 	"globals": {
 		"Chat": true,
 		"Handlebars": true,
-		"Backbone": true
+		"Backbone": true,
+		"moment": true
 	}
 }
